@@ -1,0 +1,31 @@
+{%extends 'base.html' %}
+
+{% block title %}
+VACANT ROOM
+{% endblock title %}
+
+{% block body %}
+<div class="container my-5">
+    <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+          <th scope="col">ROOM NO</th>
+          <th scope="col">TYPE</th>
+          <th scope="col">OCC_BED</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for vacroom in vacroom %}
+        <tr>
+          <td>{{vacroom.roomno}}</td>
+          <td>{{vacroom.type}}</td>
+          <td>{{vacroom.occ_bed}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+  
+{% endblock body %}

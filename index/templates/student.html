@@ -1,0 +1,443 @@
+{%extends 'base.html' %}
+
+{% block title %}
+HMS-STUDENT
+{% endblock title %}
+
+{% block body %}
+<div class="zf-templateWidth"><form action='/student' name='form' method='POST' onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();' accept-charset='UTF-8' enctype='multipart/form-data' id='form'><input type="hidden" name="zf_referrer_name" value=""><!-- To Track referrals , place the referrer name within the " " in the above hidden input field -->
+    <input type="hidden" name="zf_redirect_url" value=""><!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
+    <input type="hidden" name="zc_gad" value=""><!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
+    <div class="zf-templateWrapper"><!---------template Header Starts Here---------->
+    <ul class="zf-tempHeadBdr"><li class="zf-tempHeadContBdr"><h2 class="zf-frmTitle"><em>Student's Details</em></h2>
+    <p class="zf-frmDesc">Enter the details of student.</p>
+    <div class="zf-clearBoth"></div></li></ul><!---------template Header Ends Here---------->
+    <!---------template Container Starts Here---------->
+    <div class="zf-subContWrap zf-leftAlign"><ul>
+    <!---------Single Line Starts Here---------->
+    <li class="zf-tempFrmWrapper zf-medium"><label class="zf-labelName"> 
+    Student's Name 
+    <em class="zf-important">*</em>
+    </label>
+    <div class="zf-tempContDiv">
+    <span> <input type="text" name="name" checktype="c1" value="" maxlength="255" fieldType=1 placeholder="" required/></span> <p id="SingleLine_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+    </div><div class="zf-clearBoth"></div></li><!---------Single Line Ends Here---------->
+    <!---------Single Line Starts Here---------->
+    <li class="zf-tempFrmWrapper zf-medium"><label class="zf-labelName"> 
+    USN 
+    <em class="zf-important">*</em>
+    </label>
+    <div class="zf-tempContDiv">
+    <span> <input type="text" name="usn" checktype="c1" value="" maxlength="255" fieldType=1 placeholder="" required/></span> <p id="SingleLine1_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+    </div><div class="zf-clearBoth"></div></li><!---------Single Line Ends Here---------->
+    <!---------Amount paid---------->
+    <li class="zf-tempFrmWrapper zf-medium"><label class="zf-labelName"> 
+      Amount paid 
+      <em class="zf-important">*</em>
+      </label>
+      <div class="zf-tempContDiv">
+      <span> <input type="text" name="amt" checktype="c1" value="" maxlength="255" fieldType=1 placeholder=""/></span> <p id="SingleLine1_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+      </div><div class="zf-clearBoth"></div></li><!---------Single Line Ends Here---------->
+    <!---------Room no starts here---------->
+    <li class="zf-tempFrmWrapper zf-large"><label class="zf-labelName"> 
+        Room NO 
+        <em class="zf-important">*</em>
+        </label>
+        <div class="zf-tempContDiv">
+          <span class="zf-flLeft zf-addtwo"> <select class="zf-form-sBox" name="room" checktype="c1">
+            <option value="-Select-">-Select-</option> 
+                        <option>101</option>
+                        <option>102</option>
+                        <option>103</option>
+                        <option>104</option>
+                        <option>105</option>
+                        <option>106</option>
+                        <option>107</option>
+                        <option>108</option>
+                        <option>109</option>
+                        <option>110</option>
+                        <option>111</option>
+                        <option>112</option>
+                        <option>113</option>
+                        <option>114</option>
+                        <option>115</option>
+                        <option>116</option>
+                        <option>117</option>
+                        <option>118</option>
+                        <option>119</option>
+                        <option>120</option>
+      </select>
+      </span>
+      <div class="zf-clearBoth"></div><p id="Address_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+    </div><div class="zf-eclearBoth"></div></li>
+    <!---------Email Starts Here---------->  
+    <li class="zf-tempFrmWrapper zf-medium"><label class="zf-labelName"> 
+      Email 
+      <em class="zf-important">*</em>
+      </label>
+      <div class="zf-tempContDiv">
+    <span> <input fieldType=9  type="text" maxlength="255" name="email" checktype="c5" value="" placeholder="Example@gmail.com" required/></span> <p id="Email_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+    </div><div class="zf-clearBoth"></div></li> <!---------Email Ends Here---------->  
+    <!---------Phone Starts Here----------> 
+    <li  class="zf-tempFrmWrapper zf-small"><label class="zf-labelName"> 
+    Phone
+    <em class="zf-important">*</em>
+    </label>
+    <div class="zf-tempContDiv zf-phonefld">
+    <div class="zf-phwrapper zf-phNumber">
+    <span> <input type="text" compname="PhoneNumber" name="PhoneNumber_countrycode" maxlength="20" checktype="c7" value="" phoneFormat="1" isCountryCodeEnabled=false fieldType="11" id="international_PhoneNumber_countrycode" valType="number" phoneFormatType="2" placeholder="" required/>
+    <!--<label>Number</label> </span>-->
+    <div class="zf-clearBoth"></div></div><p id="PhoneNumber_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+    </div><div class="zf-clearBoth"></div></li><!---------Phone Ends Here----------> 
+    <!--address-->
+    <!---------Address Starts Here---------->  
+    <li class="zf-tempFrmWrapper zf-address zf-addrlarge " ><label class="zf-labelName"> 
+    Permanent address 
+    <em class="zf-important">*</em>
+    </label>
+    <div class="zf-tempContDiv zf-address">
+    <div class="zf-addrCont">
+    <span class="zf-addOne"> <input type="text" maxlength="255" name="address" checktype="c1" placeholder="" required/>
+    <!--<label>Street Address</label>-->
+     </span>
+    <!--<span class="zf-addOne"> <input type="text" maxlength="255" name="Address_AddressLine2" checktype="c1" placeholder=""/>
+    <label>Address Line 2</label>
+     </span>
+    <span class="zf-flLeft zf-addtwo"> <input type="text" maxlength="255" name="Address_City" checktype="c1" placeholder=""/>
+    <label>City</label>
+     </span>
+    <span class="zf-flLeft zf-addtwo"> <input type="text" maxlength="255" name="Address_Region" checktype="c1" placeholder=""/>
+    <label>State/Region/Province</label>
+     </span>
+    <span class="zf-flLeft zf-addtwo"> <input type="text" maxlength="255" name="Address_ZipCode" checktype="c1" placeholder=""/>
+    <label>Postal / Zip Code</label>
+     </span>
+    <span class="zf-flLeft zf-addtwo"> <select class="zf-form-sBox" name="Address_Country" checktype="c1">
+    <option value="-Select-">-Select-</option> 
+                <option>&Aring;land Islands</option>
+                <option>Afghanistan</option>
+                <option>Akrotiri</option>
+                <option>Albania</option>
+                <option>Algeria</option>
+                <option>American Samoa</option>
+                <option>Andorra</option>
+                <option>Angola</option>
+                <option>Anguilla</option>
+                <option>Antarctica</option>
+                <option>Antigua and Barbuda</option>
+                <option>Argentina</option>
+                <option>Armenia</option>
+                <option>Aruba</option>
+                <option>Ashmore and Cartier Islands</option>
+                <option>Australia</option>
+                <option>Austria</option>
+                <option>Azerbaijan</option>
+                <option>Bahrain</option>
+                <option>Bangladesh</option>
+                <option>Barbados</option>
+                <option>Bassas Da India</option>
+                <option>Belarus</option>
+                <option>Belgium</option>
+                <option>Belize</option>
+                <option>Benin</option>
+                <option>Bermuda</option>
+                <option>Bhutan</option>
+                <option>Bolivia</option>
+                <option>Bosnia and Herzegovina</option>
+                <option>Botswana</option>
+                <option>Bouvet Island</option>
+                <option>Brazil</option>
+                <option>British Indian Ocean Territory</option>
+                <option>British Virgin Islands</option>
+                <option>Brunei</option>
+                <option>Bulgaria</option>
+                <option>Burkina Faso</option>
+                <option>Burma</option>
+                <option>Burundi</option>
+                <option>Cambodia</option>
+                <option>Cameroon</option>
+                <option>Canada</option>
+                <option>Cape Verde</option>
+                <option>Caribbean Netherlands</option>
+                <option>Cayman Islands</option>
+                <option>Central African Republic</option>
+                <option>Chad</option>
+                <option>Chile</option>
+                <option>China</option>
+                <option>Christmas Island</option>
+                <option>Clipperton Island</option>
+                <option>Cocos &#x28;Keeling&#x29; Islands</option>
+                <option>Colombia</option>
+                <option>Comoros</option>
+                <option>Cook Islands</option>
+                <option>Coral Sea Islands</option>
+                <option>Costa Rica</option>
+                <option>Cote D&#x27;Ivoire</option>
+                <option>Croatia</option>
+                <option>Cuba</option>
+                <option>Cura&ccedil;ao</option>
+                <option>Cyprus</option>
+                <option>Czech Republic</option>
+                <option>Democratic Republic of the Congo</option>
+                <option>Denmark</option>
+                <option>Dhekelia</option>
+                <option>Djibouti</option>
+                <option>Dominica</option>
+                <option>Dominican Republic</option>
+                <option>Ecuador</option>
+                <option>Egypt</option>
+                <option>El Salvador</option>
+                <option>Equatorial Guinea</option>
+                <option>Eritrea</option>
+                <option>Estonia</option>
+                <option>Ethiopia</option>
+                <option>Europa Island</option>
+                <option>Falkland Islands &#x28;Islas Malvinas&#x29;</option>
+                <option>Faroe Islands</option>
+                <option>Federated States of Micronesia</option>
+                <option>Fiji</option>
+                <option>Finland</option>
+                <option>France</option>
+                <option>French Guiana</option>
+                <option>French Polynesia</option>
+                <option>French Southern and Antarctic Lands</option>
+                <option>Gabon</option>
+                <option>Gaza Strip</option>
+                <option>Georgia</option>
+                <option>Germany</option>
+                <option>Ghana</option>
+                <option>Gibraltar</option>
+                <option>Glorioso Islands</option>
+                <option>Greece</option>
+                <option>Greenland</option>
+                <option>Grenada</option>
+                <option>Guadeloupe</option>
+                <option>Guam</option>
+                <option>Guatemala</option>
+                <option>Guernsey</option>
+                <option>Guinea</option>
+                <option>Guinea-bissau</option>
+                <option>Guyana</option>
+                <option>Haiti</option>
+                <option>Heard Island and Mcdonald Islands</option>
+                <option>Holy See &#x28;Vatican City&#x29;</option>
+                <option>Honduras</option>
+                <option>Hong Kong</option>
+                <option>Hungary</option>
+                <option>Iceland</option>
+                <option>India</option>
+                <option>Indonesia</option>
+                <option>Iran</option>
+                <option>Iraq</option>
+                <option>Ireland</option>
+                <option>Isle of Man</option>
+                <option>Israel</option>
+                <option>Italy</option>
+                <option>Jamaica</option>
+                <option>Jan Mayen</option>
+                <option>Japan</option>
+                <option>Jersey</option>
+                <option>Jordan</option>
+                <option>Juan De Nova Island</option>
+                <option>Kazakhstan</option>
+                <option>Kenya</option>
+                <option>Kiribati</option>
+                <option>Kosovo</option>
+                <option>Kuwait</option>
+                <option>Kyrgyzstan</option>
+                <option>Laos</option>
+                <option>Latvia</option>
+                <option>Lebanon</option>
+                <option>Lesotho</option>
+                <option>Liberia</option>
+                <option>Libya</option>
+                <option>Liechtenstein</option>
+                <option>Lithuania</option>
+                <option>Luxembourg</option>
+                <option>Macau</option>
+                <option>Macedonia</option>
+                <option>Madagascar</option>
+                <option>Malawi</option>
+                <option>Malaysia</option>
+                <option>Maldives</option>
+                <option>Mali</option>
+                <option>Malta</option>
+                <option>Marshall Islands</option>
+                <option>Martinique</option>
+                <option>Mauritania</option>
+                <option>Mauritius</option>
+                <option>Mayotte</option>
+                <option>Mexico</option>
+                <option>Moldova</option>
+                <option>Monaco</option>
+                <option>Mongolia</option>
+                <option>Montenegro</option>
+                <option>Montserrat</option>
+                <option>Morocco</option>
+                <option>Mozambique</option>
+                <option>Myanmar</option>
+                <option>Namibia</option>
+                <option>Nauru</option>
+                <option>Navassa Island</option>
+                <option>Nepal</option>
+                <option>Netherlands</option>
+                <option>Netherlands Antilles</option>
+                <option>New Caledonia</option>
+                <option>New Zealand</option>
+                <option>Nicaragua</option>
+                <option>Niger</option>
+                <option>Nigeria</option>
+                <option>Niue</option>
+                <option>Norfolk Island</option>
+                <option>North Korea</option>
+                <option>Northern Mariana Islands</option>
+                <option>Norway</option>
+                <option>Oman</option>
+                <option>Pakistan</option>
+                <option>Palau</option>
+                <option>Palestine</option>
+                <option>Panama</option>
+                <option>Papua New Guinea</option>
+                <option>Paracel Islands</option>
+                <option>Paraguay</option>
+                <option>Peru</option>
+                <option>Philippines</option>
+                <option>Pitcairn Islands</option>
+                <option>Poland</option>
+                <option>Portugal</option>
+                <option>Puerto Rico</option>
+                <option>Qatar</option>
+                <option>Republic of the Congo</option>
+                <option>Reunion</option>
+                <option>Romania</option>
+                <option>Russia</option>
+                <option>Rwanda</option>
+                <option>Saint Barth&Atilde;&copy;lemy</option>
+                <option>Saint Helena</option>
+                <option>Saint Kitts and Nevis</option>
+                <option>Saint Lucia</option>
+                <option>Saint Martin</option>
+                <option>Saint Pierre and Miquelon</option>
+                <option>Saint Vincent and the Grenadines</option>
+                <option>Samoa</option>
+                <option>San Marino</option>
+                <option>Sao Tome and Principe</option>
+                <option>Saudi Arabia</option>
+                <option>Senegal</option>
+                <option>Serbia</option>
+                <option>Seychelles</option>
+                <option>Sierra Leone</option>
+                <option>Singapore</option>
+                <option>Sint Maarten</option>
+                <option>Slovakia</option>
+                <option>Slovenia</option>
+                <option>Solomon Islands</option>
+                <option>Somalia</option>
+                <option>South Africa</option>
+                <option>South Georgia and the South Sandwich Islands</option>
+                <option>South Korea</option>
+                <option>South Sudan</option>
+                <option>Spain</option>
+                <option>Spratly Islands</option>
+                <option>Sri Lanka</option>
+                <option>Sudan</option>
+                <option>Suriname</option>
+                <option>Svalbard</option>
+                <option>Swaziland</option>
+                <option>Sweden</option>
+                <option>Switzerland</option>
+                <option>Syria</option>
+                <option>Taiwan</option>
+                <option>Tajikistan</option>
+                <option>Tanzania</option>
+                <option>Thailand</option>
+                <option>The Bahamas</option>
+                <option>The Gambia</option>
+                <option>Timor-leste</option>
+                <option>Togo</option>
+                <option>Tokelau</option>
+                <option>Tonga</option>
+                <option>Trinidad and Tobago</option>
+                <option>Tromelin Island</option>
+                <option>Tunisia</option>
+                <option>Turkey</option>
+                <option>Turkmenistan</option>
+                <option>Turks and Caicos Islands</option>
+                <option>Tuvalu</option>
+                <option>Uganda</option>
+                <option>Ukraine</option>
+                <option>United Arab Emirates</option>
+                <option>United Kingdom</option>
+                <option>United States</option>
+                <option>Uruguay</option>
+                <option>Uzbekistan</option>
+                <option>Vanuatu</option>
+                <option>Venezuela</option>
+                <option>Vietnam</option>
+                <option>Virgin Islands</option>
+                <option>Wake Island</option>
+                <option>Wallis and Futuna</option>
+                <option>West Bank</option>
+                <option>Western Sahara</option>
+                <option>Yemen</option>
+                <option>Zambia</option>
+                <option>Zimbabwe</option>
+    </select>
+    <label>Country</label>
+     </span>-->
+    <div class="zf-clearBoth"></div><p id="Address_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+    </div></div><div class="zf-eclearBoth"></div></li><!---------Address Ends Here---------->
+    <!--fileupload-->
+    <!---------File Upload Starts Here---------->  
+    <!---<li class="zf-tempFrmWrapper"><label class="zf-labelName">Company logo
+    </label>
+    <div class="zf-tempContDiv">
+    <input type="file"  name="FileUpload" checktype="c1"/>
+    <p id="FileUpload_error" class="zf-errorMessage" style="display:none;">Choose any file for this field.</p>
+    </div><div class="zf-clearBoth"></div></li><!---------File Upload Ends Here---------->  
+    <!---------Date Starts Here----------> 
+    <li class="zf-tempFrmWrapper zf-date"><label class="zf-labelName"> 
+    Date of Birth 
+    <em class="zf-important">*</em>
+    </label>
+    <div class="zf-tempContDiv">
+    <span> <input type="date" id="Test_DatetimeLoca" name="Date" checktype="c4" value="" maxlength="25" placeholder="" required/><label>dd-MMM-yyyy</label> </span><div class="zf-clearBoth"></div><p id="Date_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+    </div><div class="zf-clearBoth"></div></li><!---------Date Ends Here----------> 
+    <!---------Description Starts Here---------->  
+    <li class="zf-tempFrmWrapper zf-note"><label class="zf-descFld"><div><span class="size" style="font-size: 16px">​Parent&#39;s Details:</span><br /></div></label>
+    <div class="zf-clearBoth"></div></li><!---------Description Ends Here---------->  
+    <!---------Name Starts Here----------> 
+    <li class="zf-tempFrmWrapper zf-name zf-namemedium"><label class="zf-labelName"> 
+    Name 
+    </label>
+    <div 
+    class="zf-tempContDiv zf-twoType"  
+    >
+    <div
+    class="zf-nameWrapper"  
+    >
+     </span>
+    <span> <input type="text" maxlength="255" name="pname" fieldType=7 placeholder="" required/> 
+     </span> 
+     </span> </span>
+   <!-- <span> <input type="text" maxlength="255" name="Name_Last" fieldType=7 placeholder=""/> <label>Last Name</label>
+     </span> -->
+     </span> </span>
+    <div class="zf-clearBoth"></div></div><p id="Name_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+    </div><div class="zf-clearBoth"></div></li><!---------Name Ends Here----------> 
+    <!---------Phone Starts Here----------> 
+    <li  class="zf-tempFrmWrapper zf-small"><label class="zf-labelName"> 
+    Phone 
+    <em class="zf-important">*</em>
+    </label>
+    <div class="zf-tempContDiv zf-phonefld">
+    <div
+    class="zf-phwrapper zf-phNumber"  
+    >
+    <span> <input type="text" compname="PhoneNumber1" name="PhoneNumber1_countrycode" maxlength="20" checktype="c7" value="" phoneFormat="1" isCountryCodeEnabled=false fieldType="11" id="international_PhoneNumber1_countrycode" valType="number" phoneFormatType="2" placeholder="" required/>
+    <label>Number</label> </span>
+    <div class="zf-clearBoth"></div></div><p id="PhoneNumber1_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+    </div><div class="zf-clearBoth"></div></li><!---------Phone Ends Here----------> 
+    </ul></div><!---------template Container Starts Here---------->
+    <ul><li class="zf-fmFooter"><button class="submit" >Submit</button></li></ul></div><!-- 'zf-templateWrapper' ends --></form></div><!-- 'zf-templateWidth' ends -->
+{% endblock body %}
